@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.5.0'
+}
+
+android {
+
+    defaultConfig {
+        compileSdk 34
+        minSdkVersion 21
+        targetSdkVersion 34
+        versionCode 1
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    namespace 'com.theartofdev.edmodo.cropper'
+}
+
+dependencies {
+    //noinspection GradleDependency
+    api 'androidx.appcompat:appcompat:1.4.2'// 基础依赖
+    //noinspection GradleDependency
+    api 'com.google.android.material:material:1.6.1' // 基础依赖
+    //noinspection GradleDependency
+    api 'androidx.core:core-ktx:1.6.0' // 基础依赖 (为了使用 kotlin-android-extensions 控制版本在1.6.0)
+    api "androidx.exifinterface:exifinterface:1.0.0"
+}
+

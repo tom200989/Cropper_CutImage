@@ -1,0 +1,27 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+
+    ext.kotlin_version = '1.4.10' //  (为了使用 kotlin-android-extensions 控制版本在1.4.10)
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.3'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21'  // (为了使用 kotlin-android-extensions 控制版本在1.6.21)
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            google()
+            mavenCentral()
+            url "https://jitpack.io"
+        }
+    }
+}
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}
